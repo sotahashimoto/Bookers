@@ -1,0 +1,14 @@
+<h3 class="book-box-headline">
+        <%= @book.title %>
+      </h3>
+      <div class="book-box-content">
+        <p class="book-date">
+          <%= @book.created_at %>
+        </p>
+      </div>
+      <p class="single-text">
+        <%= @book.body %>
+      </p>
+
+      <%= link_to "編集", edit_book_path(@book) %>
+      <%= link_to "削除", book_path(@book), method: :delete %>
