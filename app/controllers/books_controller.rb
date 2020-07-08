@@ -15,13 +15,20 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      @books = Book.all
+      render :index
+    end
   end
 
   def edit
   	@book = Book.find(params[:id])
+
+    flash[:success] = 'Book was successfully created.'
+    # 編集後の詳細画面に'内の文字'を表示
   end
 
   def update
