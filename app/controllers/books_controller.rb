@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   def index
-  	# 記事を全件取得
     @books = Book.all
+    # 記事を全件取得
+    @book = Book.new
+    # indexページに新規投稿を表示する為
   end
 
   def show
