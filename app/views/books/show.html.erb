@@ -1,8 +1,9 @@
 <%= flash[:success] %>
 <!-- books_controllerのアクションを参照 -->
 
-<h3 class="book-box-headline"><%= "Title:"+@book.title %></h3>
-<p class="single-text"><%= "Body:"+@book.body %></p>
+<h3><%= "Title:"+@book.title %></h3>
+<p><%= "Body:"+@book.body %></p>
 
+<!-- link_to 表示させるテキスト , リンク先URL (id指定) -->
 <%= link_to "Edit", edit_book_path(@book) %>
-<%= link_to "Back", books_path(@book) %>
+<%= link_to "Back", books_path(@books) %>
